@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 7aa997d231560e94786835e493c2ab62
+timeCreated: 1465360399
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: body_knight
+    100002: butt_knight
+    100004: eye_l_knight
+    100006: eye_r_knight
+    100008: face_knight
+    100010: head_knight
+    100012: //RootNode
+    100014: left_arm_knight
+    100016: left_eyebrow
+    100018: left_finger_01
+    100020: left_finger_02
+    100022: left_hand_knight
+    100024: left_shoulder_knight
+    100026: left_thumb_01
+    100028: left_thumb_02
+    100030: quilt_back
+    100032: quilt_front
+    100034: quilt_left
+    100036: quilt_right
+    100038: right_arm_knight
+    100040: right_eyebrow
+    100042: right_finger_01
+    100044: right_finger_02
+    100046: right_hand_knight
+    100048: right_shoulder_knight
+    100050: right_thumb_01
+    100052: right_thumb_02
+    100054: root_knight
+    100056: shield
+    100058: sword
+    400000: body_knight
+    400002: butt_knight
+    400004: eye_l_knight
+    400006: eye_r_knight
+    400008: face_knight
+    400010: head_knight
+    400012: //RootNode
+    400014: left_arm_knight
+    400016: left_eyebrow
+    400018: left_finger_01
+    400020: left_finger_02
+    400022: left_hand_knight
+    400024: left_shoulder_knight
+    400026: left_thumb_01
+    400028: left_thumb_02
+    400030: quilt_back
+    400032: quilt_front
+    400034: quilt_left
+    400036: quilt_right
+    400038: right_arm_knight
+    400040: right_eyebrow
+    400042: right_finger_01
+    400044: right_finger_02
+    400046: right_hand_knight
+    400048: right_shoulder_knight
+    400050: right_thumb_01
+    400052: right_thumb_02
+    400054: root_knight
+    400056: shield
+    400058: sword
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

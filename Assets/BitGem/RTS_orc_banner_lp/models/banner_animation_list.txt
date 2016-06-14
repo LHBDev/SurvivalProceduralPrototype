@@ -1,0 +1,5 @@
+RTS Orc Banner Animation List
+
+Frame 001-060: sway in wind loop
+
+
