@@ -25,18 +25,38 @@ ExportedObj/
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 *.meta
-Library/metadata/00/00000000000000005100000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/0000000000000000a000000000000000
-Library/metadata/00/00000000000000007100000000000000
-Library/metadata/00/00000000000000008000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/metadata/00/00000000000000002000000000000000
-Library/assetDatabase3
-Library/metadata/00/0000000000000000c000000000000000
+
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
+Assets/AssetStoreTools*
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
