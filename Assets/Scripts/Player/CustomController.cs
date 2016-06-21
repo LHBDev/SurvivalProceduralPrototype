@@ -55,7 +55,7 @@ public class CustomController : MonoBehaviour
     [SerializeField]
     private MouseLook m_mouseLook;
     private Camera m_Camera;
-
+	public bool canMove = true; //flag to toggle if cant move
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -76,7 +76,8 @@ public class CustomController : MonoBehaviour
         float inputY = Input.GetAxis("Vertical");
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed) ? .7071f : 1.0f;
-
+		if (!canMove)
+			return;
         if (grounded)
         {
             bool sliding = false;
@@ -188,5 +189,11 @@ public class CustomController : MonoBehaviour
     {
         m_mouseLook.LookRotation(transform, m_Camera.transform);
     }
+
+	public void SetCanMove(bool B){
+		canMove = B;
+		m_mouseLook.SetCursorLock (B);
+		m_mouseLook.lockCamera = !B;
+	}
 
 }

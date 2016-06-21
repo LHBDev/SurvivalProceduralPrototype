@@ -14,7 +14,7 @@ public class MouseLook : MonoBehaviour
     public bool smooth;
     public float smoothTime = 5f;
     public bool lockCursor = true;
-
+	public bool lockCamera = false;
 
     private Quaternion m_CharacterTargetRot;
     private Quaternion m_CameraTargetRot;
@@ -29,6 +29,9 @@ public class MouseLook : MonoBehaviour
 
     public void LookRotation(Transform character, Transform camera)
     {
+		if (lockCamera)
+			return;
+		
         float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
         float xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * YSensitivity;
 
