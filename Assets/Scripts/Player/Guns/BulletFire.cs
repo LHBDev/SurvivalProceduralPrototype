@@ -31,7 +31,7 @@ public class BulletFire : MonoBehaviour
             tempRigidBody = bulletClone.GetComponent<Rigidbody>();
 
             //adding the velocity of the bullet
-            tempRigidBody.velocity = transform.up * bulletSpeed;
+            tempRigidBody.velocity = transform.forward * bulletSpeed;
 
             //destroy to save resources
             Destroy(bulletClone, bulletTIMER);

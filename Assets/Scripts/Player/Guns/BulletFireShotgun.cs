@@ -31,11 +31,11 @@ public class BulletFireShotgun : MonoBehaviour
             GameObject bulletClone5;
 
             //cloned the prefab as a gameobject and made it spawn out of the bullet emitter
-            bulletClone1 = Instantiate(Bullet, Bullet_Emitter1.transform.position, Bullet_Emitter1.transform.rotation) as GameObject;
-            bulletClone2 = Instantiate(Bullet, Bullet_Emitter2.transform.position, Bullet_Emitter2.transform.rotation) as GameObject;
-            bulletClone3 = Instantiate(Bullet, Bullet_Emitter3.transform.position, Bullet_Emitter3.transform.rotation) as GameObject;
-            bulletClone4 = Instantiate(Bullet, Bullet_Emitter4.transform.position, Bullet_Emitter4.transform.rotation) as GameObject;
-            bulletClone5 = Instantiate(Bullet, Bullet_Emitter5.transform.position, Bullet_Emitter5.transform.rotation) as GameObject;
+            bulletClone1 = Instantiate(Bullet, Bullet_Emitter1.transform.position, Bullet_Emitter1.transform.localRotation) as GameObject;
+            bulletClone2 = Instantiate(Bullet, Bullet_Emitter2.transform.position, Bullet_Emitter2.transform.localRotation) as GameObject;
+            bulletClone3 = Instantiate(Bullet, Bullet_Emitter3.transform.position, Bullet_Emitter3.transform.localRotation) as GameObject;
+            bulletClone4 = Instantiate(Bullet, Bullet_Emitter4.transform.position, Bullet_Emitter4.transform.localRotation) as GameObject;
+            bulletClone5 = Instantiate(Bullet, Bullet_Emitter5.transform.position, Bullet_Emitter5.transform.localRotation) as GameObject;
 
 
             /*fixing temp bullet rotation
@@ -58,6 +58,13 @@ public class BulletFireShotgun : MonoBehaviour
             tempRigidBody3 = bulletClone3.GetComponent<Rigidbody>();
             tempRigidBody4 = bulletClone4.GetComponent<Rigidbody>();
             tempRigidBody5 = bulletClone5.GetComponent<Rigidbody>();
+            /*
+            tempRigidBody1.rotation = Bullet_Emitter1.transform.localRotation;
+            tempRigidBody2.rotation = Bullet_Emitter2.transform.localRotation;
+            tempRigidBody3.rotation = Bullet_Emitter3.transform.localRotation;
+            tempRigidBody4.rotation = Bullet_Emitter4.transform.localRotation;
+            tempRigidBody5.rotation = Bullet_Emitter5.transform.localRotation;
+            */
 
             //adding the velocity of the bullet
             tempRigidBody1.velocity = transform.forward * bulletSpeed;
