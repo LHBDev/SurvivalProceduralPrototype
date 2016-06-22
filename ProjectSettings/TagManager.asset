@@ -7,6 +7,7 @@ TagManager:
   - ItemDatabase
   - ScrollScript
   - Inventory
+  - Enemy
   layers:
   - Default
   - TransparentFX
