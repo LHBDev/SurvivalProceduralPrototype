@@ -11,6 +11,7 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth pHealth;
     EnemyHealth eHealth;
     bool playerInRange;
+    NavMeshAgent nav;
     float timer;
 
 
@@ -19,7 +20,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         pHealth = player.GetComponent<PlayerHealth>();
         eHealth = GetComponent<EnemyHealth>();
-
+        nav = GetComponent<NavMeshAgent>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,6 +28,10 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject == player)
         {
             playerInRange = true;
+        }
+        else if(other.gameObject.tag == "Enemy")
+        {
+           
         }
     }
 
