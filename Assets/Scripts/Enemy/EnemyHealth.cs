@@ -25,14 +25,14 @@ public class EnemyHealth : MonoBehaviour {
             return;
         currentHealth -= amount;
 
-        if (currentHealth >= 0)
+        if (currentHealth <= 0)
             Death();
     }
 
     void Death()
     {
         isDead = true;
-        rangeCollider.isTrigger = true; //Doesn't block anymore
+        rangeCollider.isTrigger = false; //Doesn't block anymore
 
         //Handle animations and audio for enemy deaths
 
