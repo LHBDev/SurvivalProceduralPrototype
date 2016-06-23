@@ -36,13 +36,15 @@ public class PlayerHealth : MonoBehaviour {
     {
         //transmit damage from enemies
         damaged = true; //signal recent damage used for visual cues
-        currentHealth -= amount;
+        //currentHealth -= amount;
 
         if(currentHealth <= 0 && !isDead)
         {
             //set death flag
-            Death();
+            //Death();
+            print("Player is dead");
         }
+        
     }
 
     void Death()
@@ -55,6 +57,7 @@ public class PlayerHealth : MonoBehaviour {
 
         //disable player movement
         cController.canMove = false;
+        print(currentHealth);
 
         //disable other character actions, ie attacking, picking up items.
 

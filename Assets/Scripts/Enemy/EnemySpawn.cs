@@ -5,10 +5,10 @@ public class EnemySpawn : MonoBehaviour {
 
     public PlayerHealth pHealth;
     public GameObject enemy;
-    public float spawnTime = 2f;
+    public float spawnTime = 4f;
     public Transform spawnPoint;
     int enemyLimit = 6;
-    int currentEnemies = 0;
+    static int currentEnemies = 0;
 
     void Start()
     {
@@ -18,10 +18,10 @@ public class EnemySpawn : MonoBehaviour {
 
     void Spawn()
     {
-        if (pHealth.currentHealth <= 0f)
+        if (pHealth.currentHealth <= 0f || currentEnemies >= enemyLimit)
             return;
-
         Instantiate(enemy, transform.position, transform.rotation);
-        currentEnemies++;
+        currentEnemies += 1;
+        
     }
 }

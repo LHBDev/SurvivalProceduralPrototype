@@ -26,6 +26,8 @@ public class EnemyMovement : MonoBehaviour {
         }
         else
         {
+            print("Player health: " + playerHealth.currentHealth);
+            print("Enemy Health: " + enemyHealth.currentHealth);
             nav.enabled = false;
         }
     }

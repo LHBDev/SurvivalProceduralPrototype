@@ -19,16 +19,20 @@ public class MouseLook : MonoBehaviour
     private Quaternion m_CharacterTargetRot;
     private Quaternion m_CameraTargetRot;
     private bool m_cursorIsLocked = true;
+    private CustomController cController;
 
     public void Init(Transform character, Transform camera)
     {
         m_CharacterTargetRot = character.localRotation;
         m_CameraTargetRot = camera.localRotation;
+        cController = GetComponent<CustomController>();
     }
 
 
     public void LookRotation(Transform character, Transform camera)
     {
+        if (!cController.canMove)
+            return;
 		if (lockCamera)
 			return;
 		
