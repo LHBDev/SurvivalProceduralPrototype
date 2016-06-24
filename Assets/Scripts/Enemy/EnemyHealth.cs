@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour {
     SphereCollider rangeCollider;
     bool isDead;
 
+
     void Awake()
     {
         rangeCollider = GetComponent<SphereCollider>();
@@ -18,7 +19,7 @@ public class EnemyHealth : MonoBehaviour {
         currentHealth = startingHealth;
         scrapValue = startingHealth / 10;
     }
-
+    /*
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
         if (isDead)
@@ -26,17 +27,39 @@ public class EnemyHealth : MonoBehaviour {
         currentHealth -= amount;
 
         if (currentHealth <= 0)
-            Death();
+            DestroyObject(gameObject);
+            rangeCollider.isTrigger = false;
+        //Death();
     }
+    */
 
+    void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            DestroyObject(gameObject);
+            LevelHandler.enemiesKilled++;
+        }
+            
+    }
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.GetComponent<Collider>().tag == "Bullet")
+        {
+            currentHealth -= 10;
+        }
+    }
+    /*
     void Death()
     {
         isDead = true;
+        LevelHandler.enemiesKilled += 1;
         rangeCollider.isTrigger = false; //Doesn't block anymore
 
         //Handle animations and audio for enemy deaths
 
         //Destroy body after 2 seconds
-        Destroy(gameObject, 2f);
+        Object.Destroy(gameObject);
     }
+    */
 }

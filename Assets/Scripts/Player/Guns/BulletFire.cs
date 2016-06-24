@@ -17,7 +17,7 @@ public class BulletFire : MonoBehaviour
     void Update()
     {
         firerate--;
-        if (firerate<=0)
+        if (firerate <= 0)
         {
             if (Input.GetMouseButton(0))
             {
@@ -42,7 +42,5 @@ public class BulletFire : MonoBehaviour
                 firerate = 10;
             }
         }
-            
-        
     }
 }
