@@ -15,6 +15,7 @@ public class LevelHandler : MonoBehaviour {
 	void Update () {
         //round handler
         if (enemiesKilled >= EnemySpawn.enemyLimit) {
+            EnemyHealth.startingHealth = (int)(EnemyHealth.startingHealth *1.15);
             g_round++;
             g_wave = 1;
             EnemySpawn.enemyLimit = (int)((g_round * 1.57) + (EnemySpawn.enemyLimit * 1.14));

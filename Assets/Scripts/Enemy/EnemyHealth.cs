@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour {
 
     public bool isBoss = false;
-    public int startingHealth = 20;
+    public static int startingHealth=20;
     public int currentHealth;
     public int scrapValue = 2;
     SphereCollider rangeCollider;
