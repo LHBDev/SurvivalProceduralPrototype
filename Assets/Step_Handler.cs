@@ -10,8 +10,7 @@ public class Step_Handler : MonoBehaviour {
         var logEntries = System.Type.GetType("UnityEditorInternal.LogEntries,UnityEditor.dll");
         var clearMethod = logEntries.GetMethod("Clear", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
         clearMethod.Invoke(null, null);
-        print("Round" + LevelHandler.g_round);
-        print("Enemies: " + LevelHandler.enemiesKilled + "/" + EnemySpawn.enemyLimit);
-        print("Current: " + EnemySpawn.currentEnemies);
+        print("Round" + LevelHandler.g_round + "\n Total Enemies: " + EnemySpawn.enemyLimit);
+        print("Spawned: " + EnemySpawn.currentEnemies + "\n  Killed/Total: " + LevelHandler.enemiesKilled + "/" + EnemySpawn.enemyLimit);
     }
 }
