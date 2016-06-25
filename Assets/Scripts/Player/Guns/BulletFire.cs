@@ -7,6 +7,7 @@ public class BulletFire : MonoBehaviour
     public float bulletSpeed = 100f;
     public float bulletTIMER = 2f;
     public GameObject Bullet;
+    public AudioClip Effect;
     public float firerate = 10;
 
     void Fire()
@@ -36,6 +37,8 @@ public class BulletFire : MonoBehaviour
 
                 //adding the velocity of the bullet
                 tempRigidBody.velocity = transform.forward * bulletSpeed;
+
+                AudioSource.PlayClipAtPoint(Effect, transform.position);
 
                 //destroy to save resources
                 Destroy(bulletClone, bulletTIMER);
