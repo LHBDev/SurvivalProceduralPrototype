@@ -52,14 +52,8 @@ public class PlayerHealth : MonoBehaviour {
         //set death flag
         isDead = true;
 
-        //Handle any other visuals/sounds upon death
-
-
         //disable player movement
         cController.canMove = false;
         print(currentHealth);
-
-        //disable other character actions, ie attacking, picking up items.
-
     }
 }

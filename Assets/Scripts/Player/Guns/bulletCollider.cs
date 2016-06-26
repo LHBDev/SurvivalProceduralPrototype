@@ -10,9 +10,8 @@ public class bulletCollider : MonoBehaviour {
 
     // Update is called once per frame
     public void OnTriggerEnter(Collider col) { 
-        if (col.GetComponent<Collider>().tag == "Enemy")
-        {
+       
             Destroy(gameObject);
-        }
+        
     }
 }
