@@ -6,9 +6,11 @@ public class EnemyHealth : MonoBehaviour {
     public bool isBoss = false;
     public static int startingHealth=20;
     public int currentHealth;
-    public int scrapValue = 2;
+    public int scrapValue;
     SphereCollider rangeCollider;
     bool isDead;
+    float startTime;
+    public Object scrap;
 
 
     void Awake()
@@ -17,7 +19,8 @@ public class EnemyHealth : MonoBehaviour {
         if (isBoss)
             startingHealth *= 180;
         currentHealth = startingHealth;
-        scrapValue = startingHealth / 10;
+        scrapValue = startingHealth;
+        startTime = Time.time;
     }
     /*
     public void TakeDamage(int amount, Vector3 hitPoint)
@@ -37,11 +40,31 @@ public class EnemyHealth : MonoBehaviour {
     {
         if (currentHealth <= 0)
         {
-            DestroyObject(gameObject);
-            LevelHandler.enemiesKilled++;
+            Death();
         }
             
     }
+
+    void dropScrap()
+    {
+        
+        GameObject spawn = (GameObject) Instantiate(scrap, transform.position, transform.rotation);
+        Scrap scrapScript = spawn.GetComponent<Scrap>();
+        scrapScript.setValue(scrapValue);
+        //print("Created scrap with value: " + scrapValue);          
+    }
+
+    void decayScrap()
+    {
+        float deltaTime = Time.time - startTime;
+        float percent = Mathf.Min(deltaTime / 60, 1.0f); // full decay in one minute
+        if (percent == 1.0f)
+            return;
+        int decayScrap = Mathf.FloorToInt(scrapValue * percent);
+        scrapValue = Mathf.Max(0, scrapValue - decayScrap);
+        dropScrap();
+    }
+
     public void OnTriggerEnter(Collider col)
     {
         if (col.GetComponent<Collider>().tag == "Bullet")
@@ -49,9 +72,10 @@ public class EnemyHealth : MonoBehaviour {
             currentHealth -= 10;
         }
     }
-    /*
+    
     void Death()
     {
+        /*
         isDead = true;
         LevelHandler.enemiesKilled += 1;
         rangeCollider.isTrigger = false; //Doesn't block anymore
@@ -60,6 +84,10 @@ public class EnemyHealth : MonoBehaviour {
 
         //Destroy body after 2 seconds
         Object.Destroy(gameObject);
+        */
+        decayScrap();
+        DestroyObject(gameObject);
+        LevelHandler.enemiesKilled++;
     }
-    */
+    
 }
