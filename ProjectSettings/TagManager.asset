@@ -9,6 +9,9 @@ TagManager:
   - Inventory
   - Enemy
   - Bullet
+  - Scrap
+  - AmmoText
+  - ClipsText
   layers:
   - Default
   - TransparentFX

@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &258750824
 Transform:
   m_ObjectHideFlags: 0
@@ -853,16 +853,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f358681513b3bc43b5b24d1bc9f20fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet_Emitter: {fileID: 1608134858}
+  Bullet_Emitter:
+  - {fileID: 1608134858}
   bulletSpeed: 100
   bulletTIMER: 2
   Bullet: {fileID: 191640, guid: e22094fcc892daf4d81478640d32c0d4, type: 2}
   Effect: {fileID: 8300000, guid: ffa1cf4f1ba32424b91e7956353a2681, type: 3}
   firerate: 50
-  reloadCount: -1
   reloadSound: {fileID: 8300000, guid: bc3840a38da2c224ba1e0e9c980fa956, type: 3}
-  bulletsText: {fileID: 338702936}
-  clipsText: {fileID: 306341529}
+  bulletsPerClip: 50
+  startingClips: 10
+  reloadTime: 2
 --- !u!1001 &267307036
 Prefab:
   m_ObjectHideFlags: 0
@@ -1192,7 +1193,7 @@ GameObject:
   - 114: {fileID: 306341529}
   m_Layer: 5
   m_Name: Clips
-  m_TagString: Untagged
+  m_TagString: ClipsText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1674,7 +1675,7 @@ GameObject:
   - 114: {fileID: 338702936}
   m_Layer: 5
   m_Name: Ammo
-  m_TagString: Untagged
+  m_TagString: AmmoText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3253,7 +3254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &671868948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3262,17 +3263,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 671868947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf8f1218df1644448278b6d746828cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f358681513b3bc43b5b24d1bc9f20fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet_Emitter1: {fileID: 521246492}
-  Bullet_Emitter2: {fileID: 977640325}
-  Bullet_Emitter3: {fileID: 1308207449}
-  Bullet_Emitter4: {fileID: 1336437113}
-  Bullet_Emitter5: {fileID: 14987963}
+  Bullet_Emitter:
+  - {fileID: 521246492}
+  - {fileID: 977640325}
+  - {fileID: 1308207449}
+  - {fileID: 1336437113}
+  - {fileID: 14987963}
   bulletSpeed: 100
   bulletTIMER: 2
   Bullet: {fileID: 191640, guid: e22094fcc892daf4d81478640d32c0d4, type: 2}
+  Effect: {fileID: 8300000, guid: ffa1cf4f1ba32424b91e7956353a2681, type: 3}
+  firerate: 10
+  reloadSound: {fileID: 8300000, guid: bc3840a38da2c224ba1e0e9c980fa956, type: 3}
+  bulletsPerClip: 1
+  startingClips: 50
+  reloadTime: 2
 --- !u!4 &671868949
 Transform:
   m_ObjectHideFlags: 0
