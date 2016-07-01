@@ -1,0 +1,17 @@
+﻿Revert "Merge remote-tracking branch 'origin/master'"
+
+This reverts commit e82dc8904d8752a5972671cd3f7979c306cad1a7, reversing
+changes made to b983d58423e40eb5b27e298520641003503ceecf.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   Assets/Scenes/Mechanics.unity
+#	modified:   Assets/Scripts/Player/Guns/BulletFire.cs
+#	modified:   Library/shadercompiler-UnityShaderCompiler.exe0.log
+#	modified:   ProjectSettings/TagManager.asset
+#
+
