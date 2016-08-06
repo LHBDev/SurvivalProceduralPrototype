@@ -14,7 +14,16 @@ public class Maze : MonoBehaviour {
 
 	public MazeDoor doorPrefab;
 
-	[Range(0f, 1f)]
+    public MazeWall mapEdgePrefab;
+
+    public int prefabRAND;
+
+    public MazeWindow windowPrefab;
+
+    [Range(0f, 1f)]
+    public float windowProbability;
+
+    [Range(0f, 1f)]
 	public float doorProbability;
 
 	public MazeWall[] wallPrefabs;
@@ -96,13 +105,17 @@ public class Maze : MonoBehaviour {
 
 	private void CreatePassage (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
 		MazePassage prefab = Random.value < doorProbability ? doorPrefab : passagePrefab;
-		MazePassage passage = Instantiate(prefab) as MazePassage;
+        MazePassage passage = Instantiate(prefab) as MazePassage;
 		passage.Initialize(cell, otherCell, direction);
 		passage = Instantiate(prefab) as MazePassage;
 		if (passage is MazeDoor) {
 			otherCell.Initialize(CreateRoom(cell.room.settingsIndex));
 		}
-		else {
+        else if (passage is MazeWindow)
+        {
+            otherCell.Initialize(CreateRoom(cell.room.settingsIndex));
+        }
+        else {
 			otherCell.Initialize(cell.room);
 		}
 		passage.Initialize(otherCell, cell, direction.GetOpposite());
@@ -121,16 +134,32 @@ public class Maze : MonoBehaviour {
 		}
 	}
 
-	private void CreateWall (MazeCell cell, MazeCell otherCell, MazeDirection direction) {
-		MazeWall wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]) as MazeWall;
-		wall.Initialize(cell, otherCell, direction);
-		if (otherCell != null) {
-			wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]) as MazeWall;
-			wall.Initialize(otherCell, cell, direction.GetOpposite());
-		}
-	}
+    private void CreateWall(MazeCell cell, MazeCell otherCell, MazeDirection direction)
+    {
+        //reassign a new random value for randomizing wall placement. | Regular Wall or Window Wall | (add more later)
+        prefabRAND = Random.Range(0, wallPrefabs.Length);
 
-	private MazeRoom CreateRoom (int indexToExclude) {
+        //is opposite cell non existent? YEAH?
+        if (otherCell == null)
+        {
+            //cool, now spawn the map edge wall prefab instead of other wall prefabs and initialize it in accordance to current cell with othercell being NULL at DIRECTION relevant to cell.x cell.z
+            MazeWall wall = Instantiate(mapEdgePrefab) as MazeWall;
+            wall.Initialize(cell, otherCell, direction);
+        }
+        else
+        {
+            //spawn random wall then initialize it current cell ~~~~~
+            MazeWall wall = Instantiate(wallPrefabs[prefabRAND]) as MazeWall;
+            wall.Initialize(cell, otherCell, direction);
+
+            //SPAWN WALL AGAIN AT OTHER CELL. SUCH FIX. MUCH WOW
+            wall = Instantiate(wallPrefabs[prefabRAND]) as MazeWall;
+            wall.Initialize(otherCell, cell, direction.GetOpposite());
+        }
+    }
+
+
+    private MazeRoom CreateRoom (int indexToExclude) {
 		MazeRoom newRoom = ScriptableObject.CreateInstance<MazeRoom>();
 		newRoom.settingsIndex = Random.Range(0, roomSettings.Length);
 		if (newRoom.settingsIndex == indexToExclude) {
